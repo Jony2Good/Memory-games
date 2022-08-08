@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="main.js"></script>
+    <title>Memory game</title>
+  </head>
+  <body>
+    <style>
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 90vh;
+      }
+
+      @media screen and (min-width: 320px) and (max-width: 900px) {
+        .wrapper {
+          width: 100%;
+        }
+        .memory-game {
+          height: 60%;
+        }
+      }
+      .memory-game {
+        display: flex;
+        flex-flow: row wrap;
+        height: 100%;
+        gap: 10px;
+        perspective: 1000px;
+      }
+      .memory-card {
+        position: relative;
+        width: calc(25% - 10px);
+        transform: scale(1);
+        cursor: pointer;
+        transition: transform 0.5s;
+        transform-style: preserve-3d;
+      }
+      .memory-card:active {
+        transform: scale(0.97);
+        transition: transform 0.2s;
+      }
+      .memory-card.flip {
+        transform: rotateY(180deg);
+      }
+      .font,
+      .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        backface-visibility: hidden;
+      }
+      .font {
+        transform: rotateY(180deg);
+      }
+      .text {
+        text-align: center;
+        font-size: 2rem;
+        color: aliceblue;
+      }
+      .btn {
+        align-self: center;
+        padding: 10px 90px;
+      }
+    </style>
+    <div class="container-fluid wrapper bg-dark pb-5">
+      <h2 class="text my-2">Memory game</h2>
+
+      <div class="memory-game">
+        <div class="memory-card" data-action="candel">
+          <img src="img/Candel1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="circul">
+          <img src="img/circul1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="compass">
+          <img src="img/Compass1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="lupa">
+          <img src="img/lupa.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+
+        <div class="memory-card" data-action="candel">
+          <img src="img/Candel1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="circul">
+          <img src="img/circul1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="compass">
+          <img src="img/Compass1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="lupa">
+          <img src="img/lupa.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+
+        <div class="memory-card" data-action="candel">
+          <img src="img/Candel1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="circul">
+          <img src="img/circul1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="compass">
+          <img src="img/Compass1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="lupa">
+          <img src="img/lupa.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+
+        <div class="memory-card" data-action="candel">
+          <img src="img/Candel1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="circul">
+          <img src="img/circul1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="compass">
+          <img src="img/Compass1.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+        <div class="memory-card" data-action="lupa">
+          <img src="img/lupa.png" class="font img-fluid" alt="qute image" />
+          <img src="img/room.png" class="back img-fluid" alt="qute image" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
