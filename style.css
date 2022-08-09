@@ -1,39 +1,55 @@
 .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  width: 50%;
-  height: 90vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 1920px;
+  height: 100vh;
 }
 
-@media screen and (min-width: 320px) and (max-width: 900px) {
-  .wrapper {
-    width: 100%;
-  }
-  .memory-game {
-    height: 60%;
-  }
-}
 .memory-game {
-  display: flex;
-  flex-flow: row wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
   height: 100%;
-  gap: 10px;
-  perspective: 1000px;
+  grid-gap: 10px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 .memory-card {
   position: relative;
-  width: calc(25% - 10px);
-  transform: scale(1);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
   cursor: pointer;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
   transition: transform 0.5s;
-  transform-style: preserve-3d;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 .memory-card:active {
-  transform: scale(0.97);
+  -webkit-transform: scale(0.97);
+      -ms-transform: scale(0.97);
+          transform: scale(0.97);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  -o-transition: transform 0.2s;
   transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 .memory-card.flip {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 .font,
 .back {
@@ -41,10 +57,12 @@
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 .font {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 .text {
   text-align: center;
@@ -52,6 +70,14 @@
   color: aliceblue;
 }
 .btn {
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   padding: 10px 90px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  .wrapper {
+    width: 100%;
+  }
 }
